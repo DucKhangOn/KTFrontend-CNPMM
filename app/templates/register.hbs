@@ -1,0 +1,5 @@
+{{#each @model as |user|}}
+<h1>{{user.email}}</h1>
+{{/each}}
+<a role="button" class="btn btn-primary theme-button mt-4" {{on 'click' this.getUsers}}>Get Users</a>
+<a role="button" class="btn btn-primary theme-button mt-4" {{on 'click' this.logout}}>Log out</a>

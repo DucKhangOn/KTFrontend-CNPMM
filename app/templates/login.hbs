@@ -1,0 +1,32 @@
+<section class="w3l-login">
+    <div class="overlay">
+        <div class="wrapper">
+            <div class="logo">
+                <a class="brand-logo" href="index.html">Snow login form</a>
+            </div>
+            <div class="form-section">
+                <h3>Login</h3>
+                <h6>To continue with Us</h6>
+                <form class="signin-form">
+                    <div class="form-input">
+                        <Input type="text" name="email" @value={{@model.email}} placeholder="Username" required="" autofocus />
+                    </div>
+                    <div class="form-input">
+                        <Input type="password" name="password" @value={{@model.password}} placeholder="Password" required="" @enter={{this.login}} />
+                    </div>
+                    <a role="button" class="btn btn-primary theme-button mt-4" {{on 'click' this.login}}>Log in</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+
+    <!-- copyright -->
+    <div class="copy-right">
+        <p>&copy; 2020 Snow Login Form. All rights reserved | Design by <a href="http://w3layouts.com/"
+                target="_blank">W3Layouts</a></p>
+    </div>
+    <!-- //copyright -->
+</section>
