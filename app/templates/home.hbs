@@ -1,6 +1,75 @@
-<!-- Benefits
-    ================================================== -->
+<div class="main">
+    <div class="blast-box">
+        <div class="blast-frame">
+            <p>Color schemes</p>
+            <div class="blast-colors d-flex justify-content-center">
+                <div class="blast-color">#00a8e0</div>
+                <div class="blast-color">#ff322e</div>
+                <div class="blast-color">#ff9900</div>
+                <div class="blast-color">#34bf49</div>
 
+                <!-- you can add more colors here -->
+            </div>
+            <p class="blast-custom-colors">Select Color</p>
+            <input type="color" name="blastCustomColor" value="#cf2626">
+        </div>
+        <div class="blast-icon"><i class="fa fa-cog" aria-hidden="true"></i></div>
+
+    </div>
+    <div id="page">
+        <div id="home" class="banner" data-blast="bgColor">
+
+            <!--/banner-->
+            <nav class="navbar navbar-expand-lg mb-4 top-bar navbar-static-top sps sps--abv">
+                <div class="container">
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                        data-target="#navbarCollapse1" aria-controls="navbarCollapse" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+                    </button>
+                    <a class="navbar-brand mx-auto" href="index.html">Pet <span data-blast="color">Club</span></a>
+                    <div class="collapse navbar-collapse" id="navbarCollapse1">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active"> <a class="nav-link" href="#myCarousel" data-blast="color">Home
+                                    <span class="sr-only">(current)</span></a> </li>
+                            <li class="nav-item"> <a class="nav-link" href="#services">Services</a> </li>
+                            <li class="nav-item"> <a class="nav-link" href="#about">About</a> </li>
+                            <li class="nav-item"> <a class="nav-link" href="#gallery">Photos</a> </li>
+                            <li class="nav-item"> <a class="nav-link" href="#book">Book Now</a> </li>
+                            <li class="nav-item"> <a class="nav-link" href="#contact">Contact</a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Swiper Silder
+    ================================================== -->
+            <!-- Slider main container -->
+            <div class="swiper-container main-slider" id="myCarousel" data-blast="bgColor">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide slider-bg-position" style="background:url(../assets/images/1.jpg)"
+                        data-hash="slide1">
+                        <div class="ban-info" data-blast="bgColor">
+                            <h2>We Make Pets Happy</h2>
+                            <p>Lorem ipsum dolor sit amet Neque porro quisquam est qui dolorem</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide slider-bg-position" style="background:url(../assets/images/2.jpg)"
+                        data-hash="slide2">
+                        <div class="ban-info" data-blast="bgColor">
+                            <h2>We'r Happy to Pamper</h2>
+                            <p> Lorem ipsum dolor sit amet Neque porro quisquam est qui dolorem</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-prev"><i class="fa fa-chevron-left"></i></div>
+                <div class="swiper-button-next"><i class="fa fa-chevron-right"></i></div>
+            </div>
+        </div>
+    </div>
+</div>
 <section class="grids-bottom-w3ls bg-light py-md-5 py-3">
     <div class="container">
         <div class="row">
@@ -51,31 +120,6 @@
                     </div>
                 </div>
 
-            </div>
-        </div>
-    </div>
-</section>
-<section class="about-sec parallax-section py-lg-5 py-4" id="about">
-    <div class="container">
-        <div class="inner-sec-w3layouts py-md-5 py-3">
-            <div class="row choose-main">
-                <div class="col-lg-3">
-                    <h3><small>Who We Are</small>About<br> Our Blog</h3>
-                </div>
-                <div class="col-lg-4">
-                    <p>Lorem ipsum dolor sit amet Neque porro quisquam est qui dolorem Lorem int ipsum dolor sit amet
-                        when an unknown printer..</p>
-                    <p>Maecenas interdum, metus vitae tincidunt porttitor, magna quam egestas sem, ac scelerisque nisl
-                        nibh vel lacus. Proin eget gravida odio. Donec ullamcorper est eu accumsan cursus.</p>
-                </div>
-                <div class="col-lg-4">
-                    <p>Maecenas interdum, metus vitae tincidunt porttitor, magna quam egestas sem, ac scelerisque nisl
-                        nibh vel lacus. Proin eget gravida odio. Donec ullamcorper est eu accumsan cursus.</p>
-                    <div class="log-in mt-md-4 mt-3">
-                        <a class="btn text-uppercase" data-blast="bgColor" href="#">
-                            Read More</a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

@@ -1,29 +1,111 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>KTBankFE</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{content-for "head"}}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>KTBankFE</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
-    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/ktbank-fe.css">
+  {{content-for "head"}}
 
-    {{content-for "head-footer"}}
-  </head>
-  <body>
-    {{content-for "body"}}
+  <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+  <link integrity="" rel="stylesheet" href="{{rootURL}}assets/ktbank-fe.css">
 
-    <script src="{{rootURL}}assets/vendor.js"></script>
-    <script src="{{rootURL}}assets/ktbank-fe.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    addEventListener("load", function () {
+      setTimeout(hideURLbar, 0);
+    }, false);
 
-    {{content-for "body-footer"}}
-  </body>
+    function hideURLbar() {
+      window.scrollTo(0, 1);
+    }
+  </script>
+  <!-- //Meta tag Keywords -->
+
+  <!-- Custom-Files -->
+  <link rel="stylesheet" href="{{rootURL}}assets/css/bootstrap.css">
+  <!-- Bootstrap-Core-CSS -->
+
+  <!-- owl carousel -->
+  <link rel="stylesheet" href="{{rootURL}}assets/css/style.css" type="text/css" media="all" />
+  <link href="{{rootURL}}assets/css/blast.min.css" rel="stylesheet" />
+
+  <!-- Style-CSS -->
+  <!-- font-awesome-icons -->
+  <link href="{{rootURL}}assets/css/font-awesome.css" rel="stylesheet">
+  <!-- //font-awesome-icons -->
+  <!--lightbox -->
+  <link rel="stylesheet" href="{{rootURL}}assets/css/lightbox.css">
+  <!-- lightbox -->
+
+
+  <!-- Font-Awesome-Icons-CSS -->
+  <link href="//fonts.googleapis.com/css?family=Oswald:300,400,500,600,700" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+
+  {{content-for "head-footer"}}
+</head>
+
+<body>
+  {{content-for "body"}}
+
+  <script src="{{rootURL}}assets/vendor.js"></script>
+  <script src="{{rootURL}}assets/ktbank-fe.js"></script>
+
+      <!--//footer-->
+      <script src="{{rootURL}}assets/js/jquery-2.2.3.min.js"></script>
+      <script src="{{rootURL}}assets/js/boost.js"></script>
+      <script src="{{rootURL}}assets/js/blast.min.js"></script>
+      <!--  light box js -->
+      <script src="{{rootURL}}assets/js/lightbox-plus-jquery.min.js">
+      </script>
+      <script>
+          // optional
+          $('#blogCarousel').carousel({
+              interval: 5000
+          });
+      </script>
+      <!-- //light box js-->
+  
+      <!--/ start-smoth-scrolling -->
+      <script src="{{rootURL}}assets/js/move-top.js"></script>
+      <script src="{{rootURL}}assets/js/easing.js"></script>
+      <script>
+          jQuery(document).ready(function($) {
+              $(".scroll").click(function(event) {
+                  event.preventDefault();
+                  $('html,body').animate({
+                      scrollTop: $(this.hash).offset().top
+                  }, 900);
+              });
+          });
+      </script>
+      <script>
+          $(document).ready(function() {
+              /*
+                          var defaults = {
+                              containerID: 'toTop', // fading element id
+                            containerHoverID: 'toTopHover', // fading element hover id
+                            scrollSpeed: 1200,
+                            easingType: 'linear' 
+                           };
+                          */
+  
+              $().UItoTop({
+                  easingType: 'easeOutQuart'
+              });
+  
+          });
+      </script>
+      <!--// end-smoth-scrolling -->
+  
+      <!-- //js -->
+  
+      <script src="{{rootURL}}assets/js/bootstrap.js"></script>
+
+  {{content-for "body-footer"}}
+</body>
+
 </html>
