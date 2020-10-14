@@ -1,5 +1,55 @@
-{{#each @model as |user|}}
-<h1>{{user.email}}</h1>
-{{/each}}
-<a role="button" class="btn btn-primary theme-button mt-4" {{on 'click' this.getUsers}}>Get Users</a>
-<a role="button" class="btn btn-primary theme-button mt-4" {{on 'click' this.logout}}>Log out</a>
+<!-- Main Content -->
+<div class="w3l-login">
+    <div class="overlay">
+        <div class="wrapper">
+            <div class="logo">
+                <a class="brand-logo" href="index.html">Space Register Form</a>
+            </div>
+            <div class="form-section">
+                <h2><span>Register now</span></h2>
+                <div style="display: block">
+                    <form class="signin-form">
+                        <div class="form-input">
+                            <input placeholder="Email" name="Email" type="email" required="">
+                        </div>
+                        <div class="form-input">
+                            <input placeholder="Password" name="Password" type="password" id="password1" required="">
+                        </div>
+                        <div class="form-input">
+                            <input placeholder="Confirm Password" name="Password" type="password" id="password2"
+                                required="">
+                        </div>
+                        <a role="button" class="btn text-white theme-button mt-4" data-blast="bgColor"
+                            {{on 'click' this.login}}>Register</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- //main -->
+
+        <!-- password-script -->
+        <script>
+            window.onload = function () {
+                document.getElementById("password1").onchange = validatePassword;
+                document.getElementById("password2").onchange = validatePassword;
+            }
+
+            function validatePassword() {
+                var pass2 = document.getElementById("password2").value;
+                var pass1 = document.getElementById("password1").value;
+                if (pass1 != pass2)
+                    document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+                else
+                    document.getElementById("password2").setCustomValidity('');
+                //empty string means no validation error
+            }
+        </script>
+        <!-- //password-script -->
+    </div>
+    <!--footer-->
+    <div class="copy-right">
+        <p>&copy; 2020 Snow Login Form. All rights reserved | Design by <a href="http://w3layouts.com/"
+                target="_blank">W3Layouts</a></p>
+    </div>
+    <!--//footer-->
+</div>

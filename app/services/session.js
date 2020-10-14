@@ -1,7 +1,7 @@
 import Service, { inject as service } from '@ember/service';
 
 const USER_TOKEN = 'userToken';
-const USER_ID = 'userEmail';
+const USER_ID = 'userId';
 
 export default class SessionService extends Service {
     @service store;
@@ -34,7 +34,9 @@ export default class SessionService extends Service {
         localStorage.removeItem(USER_ID);
     }
 
-    getUserId() {
-        return localStorage.getItem(USER_ID);
+    async getUser() {
+        const user = await fetch(`http://localhost:5000/api/users/${localStorage.getItem(USER_ID)}`);
+        var x = await user.json();
+        return x.user;
     }
 }

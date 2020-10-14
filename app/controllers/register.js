@@ -25,13 +25,14 @@ export default class RegisterController extends Controller {
     }
 
     @action
-    getUsers() {
+    async getUsers() {
         var users = this.model;
         users.forEach(element => {
             console.log(element.email);
             console.log(element.password);
         });
-        console.log('Current userId: ' + this.session.getUserId());
+        var x = await this.session.getUser();
+        console.log('Current user is ' + x.email);
     }
 
     @action
