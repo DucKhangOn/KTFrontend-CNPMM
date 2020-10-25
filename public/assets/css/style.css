@@ -10,7 +10,7 @@ body {
     margin: 0;
     font-size: 100%;
     font-family: 'Open Sans', sans-serif;
-    background: #fff;
+    background: url(../images/1.jpg) no-repeat 0px 0px;
 }
 body a {
     text-decoration: none;
@@ -262,6 +262,17 @@ ul {
     background: #0297ff;
 }
 
+.form-group label {
+    color: #fff;
+}
+
+.bg-form {
+    background-color: rgb(65, 65, 65);
+}
+
+.wrapper-form {
+    background-color: rgb(112, 110, 110);
+}
 
 /* Benifits
 -------------------------------------------------- */
@@ -274,7 +285,7 @@ ul {
     font-weight: 600;
     font-size: 1em;
     letter-spacing: 1px;
-    color: #2b2b2b;
+    color: #f8f9fa;
     text-transform: uppercase;
     margin: 0;
 }
@@ -510,7 +521,7 @@ figure.effect-lexi:hover p {
 }
 h4.post {
     font-size: 1em;
-    color: #444;
+    color: #f8f9fa;
     font-weight: 700;
     text-transform: uppercase;
     line-height: 1.6em;

@@ -10,4 +10,8 @@ Router.map(function() {
   this.route('login');
   this.route('register');
   this.route('home');
+
+  this.route('recharge', function() {
+    this.route('recharge-into-ktb');
+  });
 });
