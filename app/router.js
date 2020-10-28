@@ -14,4 +14,9 @@ Router.map(function() {
   this.route('recharge', function() {
     this.route('recharge-into-ktb');
   });
+
+  this.route('page', function() {
+    this.route('success');
+    this.route('error');
+  });
 });
