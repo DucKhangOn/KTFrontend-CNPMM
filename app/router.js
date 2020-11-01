@@ -19,4 +19,7 @@ Router.map(function() {
     this.route('success');
     this.route('error');
   });
+  this.route('admin', function() {
+    this.route('users', function() {});
+  });
 });

@@ -10,7 +10,7 @@ export default class LoginController extends Controller {
         this.session.login(this.model.email, this.model.password)
         .then(user => {
             if (user){
-                this.transitionToRoute('register');
+                this.transitionToRoute('admin');
                 // console.log(user);
                 // console.log(this.session.user);
             } else {

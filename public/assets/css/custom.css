@@ -1,0 +1,23 @@
+.bg-night {
+    background: url("../img/night.jpg") no-repeat center center fixed;
+}
+
+.bg-footer {
+    background: url("../img/night.jpg") no-repeat center center fixed;
+}
+
+.footer-text {
+    opacity: 0.8;
+    position: absolute;
+    width: 100%;
+  }
+
+.logo {
+    text-align: center;
+}
+
+a.brand-logo {
+    color: #000000;
+    color: #fff;
+    font-size: 40px;
+}

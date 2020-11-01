@@ -1,32 +1,60 @@
-<section class="w3l-login">
-    <div class="overlay">
-        <div class="wrapper">
-            <div class="logo">
-                <a class="brand-logo" href="index.html">Snow login form</a>
-            </div>
-            <div class="form-section">
-                <h3 data-blast="color">Login</h3>
-                <h6>To continue with Us</h6>
-                <form class="signin-form">
-                    <div class="form-input">
-                        <Input type="text" name="email" @value={{@model.email}} placeholder="Username" required="" autofocus />
+<div class="bg-night">
+    <div class="container">
+        <!-- Outer Row -->
+        <div class="logo pt-4">
+            <a class="brand-logo" href="index.html"><span data-blast="color">KT</span>Bank</a>
+            <p style="color: rgb(199, 199, 199);">Kính chào quý khách</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-12 col-md-9">
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 mb-4" data-blast="color">Chào mừng trở lại!</h1>
+                                    </div>
+                                    <form class="user">
+                                        <div class="form-group">
+                                            <Input type="email" class="form-control form-control-user"
+                                                id="exampleInputEmail" aria-describedby="emailHelp"
+                                                placeholder="Địa chỉ email" @value={{@model.email}} />
+                                        </div>
+                                        <div class="form-group">
+                                            <Input type="password" class="form-control form-control-user"
+                                                id="exampleInputPassword" placeholder="Mật khẩu" @value={{@model.password}} />
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox small">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck">
+                                                <label class="custom-control-label" for="customCheck">Lưu đăng nhập</label>
+                                            </div>
+                                        </div>
+                                        <a role="button" class="btn btn-user btn-block text-light" data-blast="bgColor" {{on 'click' this.login}}>Đăng nhập</a>
+                                    </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" href="forgot-password.html" data-blast="color">Quên mật khẩu?</a>
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="small" href="register.html" data-blast="color">Đăng ký!</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-input">
-                        <Input type="password" name="password" @value={{@model.password}} placeholder="Password" required="" @enter={{this.login}} />
-                    </div>
-                    <a role="button" class="btn text-white theme-button mt-4" data-blast="bgColor" {{on 'click' this.login}}>Log in</a>
-                </form>
+                </div>
             </div>
         </div>
     </div>
-    <div id='stars'></div>
-    <div id='stars2'></div>
-    <div id='stars3'></div>
-
-    <!-- copyright -->
-    <div class="copy-right">
-        <p>&copy; 2020 Snow Login Form. All rights reserved | Design by <a href="http://w3layouts.com/"
-                target="_blank">W3Layouts</a></p>
-    </div>
-    <!-- //copyright -->
-</section>
+    <footer class="sticky-footer bg-footer footer-text">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto text-light">
+                <span>Copyright &copy; KTBank 2020</span>
+            </div>
+        </div>
+    </footer>
+</div>
