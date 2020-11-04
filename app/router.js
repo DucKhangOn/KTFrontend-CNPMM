@@ -11,8 +11,8 @@ Router.map(function() {
   this.route('register');
   this.route('home');
 
-  this.route('recharge', function() {
-    this.route('recharge-into-ktb');
+  this.route('charge', function() {
+    this.route('charge-into-ktb');
   });
 
   this.route('page', function() {

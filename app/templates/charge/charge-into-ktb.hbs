@@ -1,5 +1,5 @@
 <Nav::TopNavOnly />
-<div class="container bg-form my-4 px-4" style="max-width: 800px">
+<div class="container bg-dark my-4 px-4" style="max-width: 800px">
     <div class="py-4">
         <h2 data-blast="color">Nạp tiền</h2>
     </div>
@@ -60,6 +60,13 @@
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn text-white theme-button mt-4 mb-4" data-blast="bgColor">Nạp tiền</button>
+        <button type="submit" class="btn text-white theme-button mt-4 mb-4" data-blast="bgColor" {{on 'click' this.charge}}>Nạp tiền</button>
     </form>
 </div>
+    <footer class="sticky-footer bg-footer footer-text">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto text-light">
+                <span>Copyright &copy; KTBank 2020</span>
+            </div>
+        </div>
+    </footer>

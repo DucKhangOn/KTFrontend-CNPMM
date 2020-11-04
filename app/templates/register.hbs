@@ -1,55 +1,90 @@
-<!-- Main Content -->
-<div class="w3l-login">
-    <div class="overlay">
-        <div class="wrapper">
-            <div class="logo">
-                <a class="brand-logo" href="index.html">Space Register Form</a>
-            </div>
-            <div class="form-section">
-                <h3 data-blast="color">Register now</h3>
-                <div style="display: block">
-                    <form class="signin-form">
-                        <div class="form-input">
-                            <input placeholder="Email" name="Email" type="email" required="">
+<div class="bg-night">
+    <div class="container">
+        <!-- Outer Row -->
+        <div class="logo pt-4">
+            <a class="brand-logo" href="index.html"><span data-blast="color">KT</span>Bank</a>
+            <p style="color: rgb(199, 199, 199);">Kính chào quý khách</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-12 col-md-9">
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 mb-4" data-blast="color">Đăng ký tài khoản!</h1>
+                                    </div>
+                                    <form class="user">
+                                        <div class="form-group row">
+                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                                <input type="text" class="form-control form-control-user"
+                                                    id="exampleFirstName" placeholder="First Name">
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control form-control-user"
+                                                    id="exampleLastName" placeholder="Last Name">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control form-control-user"
+                                                id="exampleInputEmail" placeholder="Email Address">
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                                <input type="password" class="form-control form-control-user"
+                                                    id="exampleInputPassword" placeholder="Password">
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <input type="password" class="form-control form-control-user"
+                                                    id="exampleRepeatPassword" placeholder="Repeat Password">
+                                            </div>
+                                        </div>
+                                        <a href="login.html" class="btn btn-primary btn-user btn-block" data-blast="bgColor">
+                                            Register Account
+                                        </a>
+                                    </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" href="forgot-password.html" data-blast="color">Forgot Password?</a>
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="small" href="login.html" data-blast="color">Already have an account? Login!</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-input">
-                            <input placeholder="Password" name="Password" type="password" id="password1" required="">
-                        </div>
-                        <div class="form-input">
-                            <input placeholder="Confirm Password" name="Password" type="password" id="password2"
-                                required="">
-                        </div>
-                        <a role="button" class="btn text-white theme-button mt-4" data-blast="bgColor"
-                            {{on 'click' this.login}}>Register</a>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- //main -->
-
-        <!-- password-script -->
-        <script>
-            window.onload = function () {
-                document.getElementById("password1").onchange = validatePassword;
-                document.getElementById("password2").onchange = validatePassword;
-            }
-
-            function validatePassword() {
-                var pass2 = document.getElementById("password2").value;
-                var pass1 = document.getElementById("password1").value;
-                if (pass1 != pass2)
-                    document.getElementById("password2").setCustomValidity("Passwords Don't Match");
-                else
-                    document.getElementById("password2").setCustomValidity('');
-                //empty string means no validation error
-            }
-        </script>
-        <!-- //password-script -->
     </div>
-    <!--footer-->
-    <div class="copy-right">
-        <p>&copy; 2020 Snow Login Form. All rights reserved | Design by <a href="http://w3layouts.com/"
-                target="_blank">W3Layouts</a></p>
-    </div>
-    <!--//footer-->
+  <footer class="sticky-footer bg-footer footer-text">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto text-light">
+                <span>Copyright &copy; KTBank 2020</span>
+            </div>
+        </div>
+    </footer>
 </div>
+
+<!-- password-script -->
+<script>
+    window.onload = function () {
+        document.getElementById("password1").onchange = validatePassword;
+        document.getElementById("password2").onchange = validatePassword;
+    }
+
+    function validatePassword() {
+        var pass2 = document.getElementById("password2").value;
+        var pass1 = document.getElementById("password1").value;
+        if (pass1 != pass2)
+            document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+        else
+            document.getElementById("password2").setCustomValidity('');
+        //empty string means no validation error
+    }
+</script>
+<!-- //password-script -->
