@@ -6,22 +6,12 @@ export default class RegisterController extends Controller {
     @service session; 
 
     @action
-    async register() {
-        var user = {email: 'test2', password: '123456'}
-        const login = await fetch('http://localhost:5000/api/users/login', {
-            method: 'POST',
-            mode: 'cors',
-            redirect: 'follow',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                email: user.email,
-                password: user.password
-            })
+    register() {
+        this.store.adapterFor('user').register(this.model).then((user) => {
+            if (user) {
+                this.transitionToRoute('login');
+            }       
         });
-        var token = await login.json()
-        console.log(token.token);
     }
 
     @action
