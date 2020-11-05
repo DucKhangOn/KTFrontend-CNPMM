@@ -1,9 +1,17 @@
 .bg-night {
-    background: url("../img/night.jpg") no-repeat center center fixed;
+    background: url("../img/forest.jpg") no-repeat center center fixed;
 }
 
 .bg-footer {
     background: url("../img/night.jpg") no-repeat center center fixed;
+}
+
+.bg-card {
+    background-color: rgba(47, 47, 47, 0.6);
+}
+
+.bg-form {
+    background-color: rgba(47, 47, 47, 0.8);
 }
 
 .footer-text {
@@ -24,4 +32,8 @@ a.brand-logo {
 
 body {
     background: url("../img/night.jpg") no-repeat center center fixed;
+}
+
+label, input {
+    color: #fff;
 }

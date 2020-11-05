@@ -10803,7 +10803,7 @@ a:focus {
 }
 
 .bg-login-image {
-  background: url("https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background: url("../img/login.jpeg");
   background-position: center;
   background-size: cover;
 }

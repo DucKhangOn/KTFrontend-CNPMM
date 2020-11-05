@@ -7,8 +7,8 @@ export default class RegisterController extends Controller {
 
     @action
     register() {
-        this.store.adapterFor('user').register(this.model).then((user) => {
-            if (user) {
+        this.store.adapterFor('user').register(this.model).then((res) => {
+            if (res.user) {
                 this.transitionToRoute('login');
             }       
         });
