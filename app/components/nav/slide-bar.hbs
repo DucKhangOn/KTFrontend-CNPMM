@@ -40,7 +40,7 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">01221468277</h6>
-                    <a class="collapse-item" href="buttons.html">Chi tiết</a>
+                    <LinkTo @route="home" class="collapse-item">Chi tiết</LinkTo>
                 </div>
             </div>
         </li>
@@ -77,8 +77,8 @@
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="404.html">Chuyển tiền trong KTB</a>
-                    <a class="collapse-item" href="blank.html">Chuyển tiền ngoài KTB</a>
+                    <LinkTo @route="home" class="collapse-item">Chuyển tiền trong KTB</LinkTo>
+                    <LinkTo @route="home" class="collapse-item">Chuyển tiền ngoài KTB</LinkTo>
                 </div>
             </div>
         </li>
@@ -91,8 +91,8 @@
             </a>
             <div id="collapseBills" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="404.html">Hóa đơn tiền nước</a>
-                    <a class="collapse-item" href="blank.html">Hóa đơn tiền điện</a>
+                    <LinkTo @route="home" class="collapse-item">Hóa đơn tiền nước</LinkTo>
+                    <LinkTo @route="home" class="collapse-item">Hóa đơn tiền điện</LinkTo>
                 </div>
             </div>
         </li>
@@ -105,8 +105,8 @@
             </a>
             <div id="collapseCharging" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="404.html">Nạp tiền vào KTB</a>
-                    <a class="collapse-item" href="blank.html">Nạp tiền điện thoại</a>
+                    <LinkTo @route="home" class="collapse-item">Nạp tiền vào KTB</LinkTo>
+                    <LinkTo @route="home" class="collapse-item">Nạp tiền điện thoại</LinkTo>
                 </div>
             </div>
         </li>
@@ -119,9 +119,9 @@
             </a>
             <div id="collapseCards" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="404.html">Tạo thẻ</a>
-                    <a class="collapse-item" href="blank.html">Mở khóa thẻ</a>
-                    <a class="collapse-item" href="blank.html">Khóa thẻ</a>
+                    <LinkTo @route="home" class="collapse-item">Tạo thẻ</LinkTo>
+                    <LinkTo @route="home" class="collapse-item">Mở khóa thẻ</LinkTo>
+                    <LinkTo @route="home" class="collapse-item">Khóa thẻ</LinkTo>
                 </div>
             </div>
         </li>
@@ -134,35 +134,40 @@
             </a>
             <div id="collapseSavings" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="404.html">Mở tiết kiệm</a>
-                    <a class="collapse-item" href="blank.html">Rút tiết kiệm</a>
-                    <a class="collapse-item" href="blank.html">Tất toán</a>
+                    <LinkTo @route="home" class="collapse-item">Mở tiết kiệm</LinkTo>
+                    <LinkTo @route="home" class="collapse-item">Rút tiết kiệm</LinkTo>
+                    <LinkTo @route="home" class="collapse-item">Tất toán</LinkTo>
                 </div>
             </div>
         </li>
 
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-            <a class="nav-link" href="charts.html">
+            <LinkTo @route="home" class="nav-link">
                 <i class="fas fa-fw fa-chart-area"></i>
-                <span>Tra cứu tỉ giá ngoại tệ</span></a>
+                <span>Tra cứu tỉ giá ngoại tệ</span></LinkTo>
         </li>
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" href="tables.html">
+            <LinkTo @route="home" class="nav-link">
                 <i class="fas fa-fw fa-table"></i>
-                <span>Tính lãi tiết kiệm</span></a>
+                <span>Tính lãi tiết kiệm</span></LinkTo>
         </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
 
+         <!-- Heading -->
+        <div class="sidebar-heading">
+            Khác
+        </div>
+
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" href="tables.html">
+            <LinkTo @route="home" class="nav-link">
                 <i class="fas fa-fw fa-cog"></i>
-                <span>Cài đặt</span></a>
+                <span>Cài đặt</span></LinkTo>
         </li>
 
         <!-- Divider -->
@@ -360,20 +365,20 @@
                             aria-labelledby="userDropdown">
                             <a class="dropdown-item" href="#">
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Profile
+                                Thông tin cá nhân
                             </a>
                             <a class="dropdown-item" href="#">
                                 <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Settings
+                                Cài đặt
                             </a>
                             <a class="dropdown-item" href="#">
                                 <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Activity Log
+                                Lịch sử giao dịch
                             </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Logout
+                                Đăng xuất
                             </a>
                         </div>
                     </li>
@@ -417,15 +422,15 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Bạn có muốn đăng xuất?</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-body">Chọn "Đăng xuất" để kết thúc phiên đăng nhập này.</div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Hủy</button>
+                <a href="login" class="btn btn-primary">Đăng xuất</a>
             </div>
         </div>
     </div>

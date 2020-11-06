@@ -2,8 +2,8 @@
     <div class="container">
         <!-- Outer Row -->
         <div class="logo pt-4">
-            <a class="brand-logo" href="index.html"><span data-blast="color">KT</span>Bank</a>
-            <p style="color: rgb(199, 199, 199);">Kính chào quý khách</p>
+            <LinkTo @route="home" class="brand-logo text-decoration-none"><span data-blast="color">KT</span>Bank</LinkTo>
+            <p class="text-light">Kính chào quý khách</p>
         </div>
         <div class="row justify-content-center">
             <div class="col-xl-10 col-lg-12 col-md-9">
@@ -30,17 +30,17 @@
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Lưu đăng nhập</label>
+                                                <label class="custom-control-label text-dark" for="customCheck">Lưu đăng nhập</label>
                                             </div>
                                         </div>
-                                        <a role="button" class="btn btn-user btn-block text-light" data-blast="bgColor" {{on 'click' this.login}}>Đăng nhập</a>
+                                        <a role="button" class="btn btn-user btn-block text-light font-weight-bold" data-blast="bgColor" {{on 'click' this.login}}>Đăng nhập</a>
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html" data-blast="color">Quên mật khẩu?</a>
+                                        <LinkTo @route="register" class="small" data-blast="color">Quên mật khẩu?</LinkTo>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="register.html" data-blast="color">Đăng ký!</a>
+                                        <LinkTo @route="register" class="small" data-blast="color">Đăng ký!</LinkTo>
                                     </div>
                                 </div>
                             </div>
