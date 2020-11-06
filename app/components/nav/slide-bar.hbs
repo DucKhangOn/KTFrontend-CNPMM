@@ -2,12 +2,12 @@
 <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
         <LinkTo class="sidebar-brand d-flex align-items-center justify-content-center" @route="home">
-            <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
+            <div class="sidebar-brand-icon">
+                <img src="../assets/img/logo.png" width="49" height="49">
             </div>
             <div class="sidebar-brand-text mx-3">KT Bank</div>
         </LinkTo>
@@ -18,7 +18,7 @@
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
             <LinkTo class="nav-link" @route="home">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fas fa-home"></i>
                 <span>Trang chủ</span></LinkTo>
         </li>
 
@@ -34,7 +34,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                 aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-cog"></i>
+                <i class="far fa-user-circle"></i>
                 <span>Số khoản thanh toán</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -49,7 +49,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                 aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-wrench"></i>
+                <i class="fas fa-chart-line"></i>
                 <span>Số dư</span>
             </a>
             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
@@ -72,7 +72,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                 aria-expanded="true" aria-controls="collapsePages">
-                <i class="fas fa-fw fa-folder"></i>
+                <i class="fa fa-exchange-alt"></i>
                 <span>Chuyển tiền</span>
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -86,7 +86,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBills"
                 aria-expanded="true" aria-controls="collapseBills">
-                <i class="fas fa-fw fa-folder"></i>
+                <i class="far fa-sticky-note"></i>
                 <span>Thanh toán hóa đơn</span>
             </a>
             <div id="collapseBills" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -100,7 +100,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCharging"
                 aria-expanded="true" aria-controls="collapseCharging">
-                <i class="fas fa-fw fa-folder"></i>
+                <i class="fas fa-dollar-sign"></i>
                 <span>Nạp tiền</span>
             </a>
             <div id="collapseCharging" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -114,7 +114,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCards"
                 aria-expanded="true" aria-controls="collapseCards">
-                <i class="fas fa-fw fa-folder"></i>
+                <i class="far fa-credit-card"></i>
                 <span>Quản lý thẻ</span>
             </a>
             <div id="collapseCards" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -129,7 +129,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSavings"
                 aria-expanded="true" aria-controls="collapseSavings">
-                <i class="fas fa-fw fa-folder"></i>
+                <i class="fas fa-piggy-bank"></i>
                 <span>Tiết kiệm</span>
             </a>
             <div id="collapseSavings" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -153,6 +153,16 @@
             <a class="nav-link" href="tables.html">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Tính lãi tiết kiệm</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+            <a class="nav-link" href="tables.html">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Cài đặt</span></a>
         </li>
 
         <!-- Divider -->
@@ -183,7 +193,7 @@
                 <!-- Topbar Search -->
                 <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                     <div class="input-group">
-                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                        <input type="text" class="form-control bg-light border-0 small" placeholder="Tìm kiếm..."
                             aria-label="Search" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                             <button class="btn btn-primary" type="button">
@@ -342,7 +352,7 @@
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Xin chào Khang</span>
                             <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
                         </a>
                         <!-- Dropdown - User Information -->
@@ -384,7 +394,7 @@
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Your Website 2020</span>
+                    <span>All copyrights reserved &copy; KTBank 2020</span>
                 </div>
             </div>
         </footer>
