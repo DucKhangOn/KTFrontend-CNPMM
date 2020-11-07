@@ -8,7 +8,7 @@ export default class ChargeChargeIntoKtbController extends Controller {
             .then(response => response.json())
             .then((data) => {
                 console.log(data.link);
-                window.location.href = this.link;
+                window.location.href = data.link;
             });
     }
 }
