@@ -11,6 +11,7 @@ export default class LoginController extends Controller {
 
         this.session.login(self.model.email, self.model.password)
             .then(user => {
+                console.log(user);
                 if (user) {
                     this.transitionToRoute('home');
                 } else {
