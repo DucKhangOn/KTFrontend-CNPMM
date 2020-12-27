@@ -2,7 +2,8 @@
     <div class="container">
         <!-- Outer Row -->
         <div class="logo pt-4">
-            <LinkTo @route="home" class="brand-logo text-decoration-none"><span data-blast="color">KT</span>Bank</LinkTo>
+            <LinkTo @route="home" class="brand-logo text-decoration-none"><span data-blast="color">KT</span>Bank
+            </LinkTo>
             <p class="text-light">Kính chào quý khách</p>
         </div>
         <div class="row justify-content-center">
@@ -20,38 +21,46 @@
                                     <form class="user">
                                         <div class="form-group row">
                                             <div class="col-sm-6 mb-3 mb-sm-0">
-                                                <Input type="text" @value={{@model.firstName}} class="form-control form-control-user"
-                                                    id="FirstName" placeholder="Tên" />
+                                                <Input type="text" @value={{@model.firstName}}
+                                                    class="form-control form-control-user" id="FirstName"
+                                                    placeholder="Tên" />
                                             </div>
                                             <div class="col-sm-6">
-                                                <Input type="text" @value={{@model.lastName}} class="form-control form-control-user"
-                                                    id="LastName" placeholder="Họ" />
+                                                <Input type="text" @value={{@model.lastName}}
+                                                    class="form-control form-control-user" id="LastName"
+                                                    placeholder="Họ" />
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <Input type="text" @value={{@model.email}} class="form-control form-control-user"
-                                                id="InputEmail" placeholder="Địa chỉ Email" />
+                                            <Input type="text" @value={{@model.email}}
+                                                class="form-control form-control-user" id="InputEmail"
+                                                placeholder="Địa chỉ Email" />
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-6 mb-3 mb-sm-0">
-                                                <Input type="password" @value={{@model.password}} class="form-control form-control-user"
-                                                    id="Password" placeholder="Mật khẩu" />
+                                                <Input id="password1" type="password" @value={{@model.password}}
+                                                    class="form-control form-control-user" id="Password"
+                                                    placeholder="Mật khẩu" />
                                             </div>
                                             <div class="col-sm-6">
-                                                <Input type="password" class="form-control form-control-user"
-                                                    id="RepeatPassword" placeholder="Nhập lại mật khẩu" />
+                                                <Input id="password2" type="password"
+                                                    class="form-control form-control-user" id="RepeatPassword"
+                                                    placeholder="Nhập lại mật khẩu" />
                                             </div>
                                         </div>
-                                        <a class="btn btn-primary btn-user btn-block text-light font-weight-bold" data-blast="bgColor" {{on 'click' this.register}}>
+                                        <a class="btn btn-primary btn-user btn-block text-light font-weight-bold"
+                                            data-blast="bgColor" {{on 'click' this.register}}>
                                             Đăng ký
                                         </a>
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <LinkTo @route="login" class="small" data-blast="color">Quên mật khẩu?</LinkTo>
+                                        <LinkTo @route="register" class="small" data-blast="color">Quên mật khẩu?
+                                        </LinkTo>
                                     </div>
                                     <div class="text-center">
-                                        <LinkTo @route="login" class="small" data-blast="color">Đã có tài khoản? Đăng nhập!</LinkTo>
+                                        <LinkTo @route="login" class="small" data-blast="color">Đã có tài khoản? Đăng
+                                            nhập!</LinkTo>
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +70,7 @@
             </div>
         </div>
     </div>
-  <footer class="sticky-footer bg-footer footer-text">
+    <footer class="sticky-footer bg-footer footer-text">
         <div class="container my-auto">
             <div class="copyright text-center my-auto text-light">
                 <span>Copyright &copy; KTBank 2020</span>
@@ -69,22 +78,5 @@
         </div>
     </footer>
 </div>
-
-<!-- password-script -->
-{{!-- <script>
-    window.onload = function () {
-        document.getElementById("password1").onchange = validatePassword;
-        document.getElementById("password2").onchange = validatePassword;
-    }
-
-    function validatePassword() {
-        var pass2 = document.getElementById("password2").value;
-        var pass1 = document.getElementById("password1").value;
-        if (pass1 != pass2)
-            document.getElementById("password2").setCustomValidity("Passwords Don't Match");
-        else
-            document.getElementById("password2").setCustomValidity('');
-        //empty string means no validation error
-    }
-</script> --}}
-<!-- //password-script -->
+<div id="snackbar">Welcome to KTBank!</div>
+<ChangeColor />

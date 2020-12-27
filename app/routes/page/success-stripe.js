@@ -1,18 +1,15 @@
 import Route from '@ember/routing/route';
 import config from '../../config/environment';
 
-export default class PageSuccessRoute extends Route {
+export default class PageSuccessStripeRoute extends Route {
     queryParams = {
         amount: {},
-        bankCardNumber: {},
-        paymentId: {},
-        PayerID: {},
-        token: {}
+        bankCardNumber: {}
     };
 
     async model(params) {
         console.log(params);
-        return await fetch(`${config.EndPoints.Api.host}/${config.EndPoints.Api.namespace}/success`, {
+        return await fetch(`${config.EndPoints.Api.host}/${config.EndPoints.Api.namespace}/success-stripe`, {
             method: 'POST',
             mode: 'cors',
             redirect: 'follow',
@@ -21,10 +18,7 @@ export default class PageSuccessRoute extends Route {
             },
             body: JSON.stringify({
                 amount: params.amount,
-                bankCardNumber: params.bankCardNumber,
-                paymentId: params.paymentId,
-                PayerID: params.PayerID,
-                token: params.token
+                bankCardNumber: params.bankCardNumber
             })
         });
     }

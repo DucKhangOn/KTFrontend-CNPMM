@@ -9,44 +9,44 @@
             <form>
                 <div class="form-group row px-3">
                     <div style="align-self: center; width: 30%">
-                        <label class="mb-0" for="inputEmail3">Số tài khoản</label>
+                        <label class="mb-0 text-light" for="inputEmail3">Số tài khoản</label>
                     </div>
                     <div style="width: 70%">
-                        <input type="email" class="form-control" id="inputEmail3" placeholder="10111252141">
+                        <Input type="email" class="form-control" @value={{@model.bankCardNumber}} readonly />
                     </div>
                 </div>
                 <div class="form-group row px-3">
                     <div style="align-self: center; width: 30%">
-                        <label class="mb-0" for="inputPassword3">Số dư khả dụng</label>
+                        <label class="mb-0 text-light" for="inputPassword3">Số dư khả dụng</label>
                     </div>
                     <div style="width: 70%">
-                        <span class="text-light">4.320.000 VNĐ</span>
+                        <span class="text-light">{{currency @model.balance}}</span>
                     </div>
                 </div>
                 <hr class="font-weight-bold border-light my-4" />
-                <p class="text-light">Hỗ trợ nạp tiền từ <span style="font-weight: bold;">Paypal, Stripe, ví Momo</span>
+                <p class="text-light">Hỗ trợ nạp tiền từ <span style="font-weight: bold;">Paypal, Stripe</span>
                 </p>
                 <div class="form-group row px-3">
                     <div style="align-self: center; width: 30%">
-                        <label class="mb-0" for="inputEmail3">Ví</label>
+                        <label class="mb-0 text-light" for="inputEmail3">Ví</label>
                     </div>
                     <div style="width: 30%">
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option>Paypal</option>
-                            <option>Stripe</option>
-                            <option>Momo</option>
+                        <select class="form-control" {{on "change" this.updateValue}}>
+                            {{#each this.payments as |item|}}
+                            <option selected={{item.value}}>{{item.name}}</option>
+                            {{/each}}
                         </select>
                     </div>
                 </div>
                 <div class="form-group row px-3">
                     <div style="align-self: center; width: 30%">
-                        <label class="mb-0" for="inputEmail3">Số tiền</label>
+                        <label class="mb-0 text-light" for="inputEmail3">Số tiền</label>
                     </div>
                     <div style="width: 70%">
                         <div class="input-group">
-                            <input type="text" class="form-control">
+                            <Input id="charge-amount" @type="number" class="form-control" @value={{this.amount}} />
                             <div class="input-group-append">
-                                <span class="input-group-text">VNĐ</span>
+                                <span class="input-group-text"><u>đ</u></span>
                             </div>
                         </div>
                     </div>
@@ -54,41 +54,62 @@
                 <div class="form-group row">
                     <div class="col-sm-10">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck1">
-                            <label class="form-check-label" for="gridCheck1">
+                            <input class="form-check-input" type="checkbox" id="gridCheck1" checked>
+                            <label class="form-check-label text-light" for="gridCheck1">
                                 Tôi đã đọc, hiểu và đồng ý <span data-blast="color">cam kết tuân thủ điều khoản, điều
                                     kiện</span> của quy định nạp
-                                tiền ví điện tử qua Ngân hàng số KTBank
+                                tiền từ ví điện tử của Ngân hàng số KTBank.
                             </label>
                         </div>
                     </div>
                 </div>
-                <a role="button" class="btn text-white theme-button mt-4 mb-4" data-blast="bgColor"
-                    {{on 'click' this.charge}}>Nạp tiền</a>
+                {{#if (equal this.typePayment 'Paypal')}}
+                <a role="button" class="btn text-white theme-button mt-4 mb-4" data-blast="bgColor" {{on 'click'
+                    this.charge}}>Xác nhận</a>
+                {{else}}
+                <a role="button" id="checkout-button" class="btn text-white theme-button mt-4 mb-4"
+                    data-blast="bgColor">Xác nhận</a>
+                {{/if}}
+                <LinkTo @route="home" class="btn text-white theme-button mt-4 mb-4" data-blast="bgColor">
+                    Quay lại</LinkTo>
             </form>
         </div>
     </div>
-
-    <button id="checkout-button">Checkout</button>
     <script type="text/javascript">
         // Create an instance of the Stripe object with your publishable API key
         var checkoutButton = document.getElementById('checkout-button');
         var key;
+
         checkoutButton.addEventListener('click', async function () {
-            var settings = {
-                "url": "http://localhost:5000/api/stripe",
-                "method": "GET",
-                "timeout": 0,
-            };
-            await $.ajax(settings).done(function (response) {
-                key = response.key;
-            });
-            var stripe = Stripe(key);
-            // Create a new Checkout Session using the server-side endpoint you
-            // created in step 3.
-            fetch('http://localhost:5000/api/create-checkout-session', {
-                method: 'POST',
-            }).then(function (response) {
+            if ($('#charge-amount').val() < 20000) {
+                var x = document.getElementById("snackbar");
+                x.className = "show";
+                setTimeout(() => { x.className = x.className.replace("show", ""); }, 3000);
+                x.innerHTML = "Thông tin không chính xác. Vui lòng kiểm tra và nhập lại.";
+            } else {
+                var settings = {
+                    "url": "http://localhost:5000/api/stripe",
+                    "method": "GET",
+                    "timeout": 0,
+                };
+                await $.ajax(settings).done(function (response) {
+                    key = response.key;
+                });
+                var stripe = Stripe(key);
+                // Create a new Checkout Session using the server-side endpoint you
+                // created in step 3.
+                fetch('http://localhost:5000/api/create-checkout-session', {
+                    method: 'POST',
+                    mode: 'cors',
+                    redirect: 'follow',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        bankCardNumber: localStorage.getItem('userBankAccountNumber'),
+                        amount: $('#charge-amount').val()
+                    })
+                }).then(function (response) {
                     return response.json();
                 }).then(function (session) {
                     return stripe.redirectToCheckout({ sessionId: session.id });
@@ -96,9 +117,14 @@
                     if (result.error) {
                         alert(result.error.message);
                     }
+                    window.location.href = '/page/success-stripe';
                 }).catch(function (error) {
                     console.error('Error:', error);
                 });
+            }
         });
     </script>
 </Nav::SlideBar>
+<div id="snackbar">Welcome to KTBank!</div>
+<script src="https://js.stripe.com/v3/"></script>
+<ChangeColor />

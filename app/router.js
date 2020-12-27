@@ -18,8 +18,11 @@ Router.map(function() {
   this.route('page', function() {
     this.route('success');
     this.route('error');
+    this.route('success-stripe');
   });
   this.route('admin', function() {
-    this.route('users', function() {});
+    this.route('users', function() {
+      this.route('user', { path: '/:user_id' });
+    });
   });
 });

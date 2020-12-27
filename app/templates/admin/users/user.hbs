@@ -1,0 +1,84 @@
+<Admin::SlideBar>
+    <div class="container-fluid">
+        <h1 class="h3 mb-2 text-gray-800">Người dùng</h1>
+
+        <form>
+            <div class="form-row">
+                {{#if @model.isNew}}
+                <div class="form-group col-md-6">
+                    <label class="text-dark">Email</label>
+
+                    <Input name="Email" type="text" class="form-control" @value={{@model.email}} />
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="text-dark">Mật khẩu</label>
+
+                    <Input name="Password" type="text" class="form-control" @value={{@model.password}} />
+                </div>
+                {{else}}
+                <div class="form-group col-md-6">
+                    <label class="text-dark">Email</label>
+
+                    <Input name="Email" type="text" class="form-control" @value={{@model.email}} readonly />
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="text-dark">Mật khẩu</label>
+
+                    <Input name="Password" type="text" class="form-control" @value={{@model.password}} readonly />
+                </div>
+                {{/if}}
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class="text-dark">Họ</label>
+
+                    <Input name="LastName" type="text" class="form-control" @value={{@model.lastName}} />
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="text-dark">Tên</label>
+
+                    <Input name="FirstName" type="text" class="form-control" @value={{@model.firstName}} />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class="text-dark">Điện thoại</label>
+
+                    <Input name="Phone" type="text" class="form-control" @value={{@model.phone}} />
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="text-dark">Giới tính</label>
+
+                    <Input name="Gender" type="text" class="form-control" @value={{@model.gender}} />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class="text-dark">Địa chỉ</label>
+
+                    <div>
+                        <Textarea name="Address" rows="3" class="form-control" @value={{@model.address}}
+                            maxlength="500" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    {{#if @model.isNew}}
+                    <label class="text-dark">Role</label>
+                    {{else}}
+                    <label class="text-dark">Role: {{if (equal @model.isAdmin true) 'Admin' 'Khách hàng'}}</label>
+                    {{/if}}
+
+                    <select name="IsAdmin" class="form-control" {{on "change" this.updateValue}}>
+                        {{#each this.roles as |item|}}
+                        <option value={{item.value}}>{{item.name}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+            <a role="button" class="btn btn-primary text-light" {{on 'click' this.submit}}>Lưu</a>
+            <a role="button" class="btn btn-primary text-light" {{on 'click' this.cancel}}>Hủy</a>
+        </form>
+    </div>
+</Admin::SlideBar>

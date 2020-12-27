@@ -1,19 +1,9 @@
-<div id="inform-page">
-    <div id="error-box">
-        <div class="dot"></div>
-        <div class="dot two"></div>
-        <div class="face2">
-            <div class="eye"></div>
-            <div class="eye right"></div>
-            <div class="mouth sad"></div>
-        </div>
-        <div class="shadow move"></div>
-        <div class="message">
-            <h1 class="alert text-light">Error!</h1>
-            <p class="text-light">Bấm "Thử lại" để trở lại trang trước đó.</p>
-        </div>
-        <div class="log-in mt-md-4 mt-3">
-            <a class="btn text-uppercase text-light bg-gradient-blue" href="#">Thử lại</a>
-        </div>
-    </div>
+<div class="message">
+    <h1 class="alert text-light">Bạn không có quyền truy cập vào trang này.</h1>
+    <p class="text-light ml-4">Bấm "Tiếp tục" để trở lại trang chủ.</p>
 </div>
+<div class="log-in">
+    <LinkTo @route="home" class="btn btn-primary text-white theme-button mt-4 mb-4 ml-4" data-blast="color">Tiếp tục
+    </LinkTo>
+</div>
+<ChangeColor />

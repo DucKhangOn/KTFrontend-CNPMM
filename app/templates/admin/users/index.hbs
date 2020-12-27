@@ -5,7 +5,7 @@
         <h1 class="h3 mb-2 text-gray-800">Người dùng</h1>
         <p class="mb-4">Quản lý người dùng...</p>
         <div class="d-flex justify-content-end">
-            <a role="button" class="btn btn-primary text-light mb-2">Thêm</a>
+            <a role="button" class="btn btn-primary text-light mb-2" {{on "click" this.addUser}}>Thêm</a>
         </div>
 
         <!-- DataTales Example -->
@@ -19,26 +19,28 @@
                         <thead>
                             <tr>
                                 <th>Email</th>
-                                <th>Password</th>
+                                <th>Tên</th>
+                                <th>Điện thoại</th>
+                                <th>Giới tính</th>
+                                <th>Địa chỉ</th>
+                                <th>Admin</th>
                                 <th></th>
                             </tr>
                         </thead>
-                        <tfoot>
-                            <tr>
-                                <th>Email</th>
-                                <th>Password</th>
-                                <th></th>
-                            </tr>
-                        </tfoot>
                         <tbody>
                             {{#each @model as |user|}}
                             <tr>
                                 <td>{{user.email}}</td>
-                                <td>{{user.password}}</td>
+                                <td>{{user.lastName}} {{user.firstName}}</td>
+                                <td>{{user.phone}}</td>
+                                <td>{{user.gender}}</td>
+                                <td>{{user.address}}</td>
+                                <td>{{user.isAdmin}}</td>
                                 <td>
-                                    {{!-- <i class="fas fa-pencil-alt"></i> --}}
-                                    <a href="aaa" class="text-gray-800"><i class="fas fa-pencil-alt"></i></a>
-                                    <a href="aaa" class="text-gray-800"><i class="fas fa-trash"></i></a>
+                                    <LinkTo @route="admin.users.user" @model={{user.id}} class="text-gray-800"><i
+                                            class="fas fa-pencil-alt"></i></LinkTo>
+                                    <a class="text-gray-800" {{on "click" (fn this.delete user)}}><i
+                                            class="fas fa-trash"></i></a>
                                 </td>
                             </tr>
                             {{/each}}

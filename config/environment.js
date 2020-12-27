@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   let ENV = {
     modulePrefix: 'ktbank-fe',
     environment,
@@ -20,6 +20,13 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    EndPoints: {
+      Api: {
+        host: 'http://localhost:5000',
+        namespace: 'api'
+      }
     }
   };
 
