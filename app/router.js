@@ -25,4 +25,6 @@ Router.map(function() {
       this.route('user', { path: '/:user_id' });
     });
   });
+  this.route('forgot-password');
+  this.route('change-password');
 });
