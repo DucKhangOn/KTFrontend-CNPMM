@@ -1,0 +1,57 @@
+<Nav::SlideBar>
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Quản lý tiết kiệm</h1>
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Danh sách sổ tiết kiệm</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" data-test="dkm">
+                        <thead>
+                            <tr>
+                                <th>Mã</th>
+                                <th>TKTK</th>
+                                <th>Kỳ hạn (tháng)</th>
+                                <th>Tiền ban đầu</th>
+                                <th>Tiền khi rút</th>
+                                <th>Ngày tất toán</th>
+                                <th>Đang hoạt động</th>
+                                <th>Ngày tạo</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each @model as |saving|}}
+                            <tr>
+                                <td>{{saving.id}}</td>
+                                <td>{{saving.savingAccountNumber}}</td>
+                                <td>{{saving.term}}</td>
+                                <td>{{currency saving.prevBalance}}</td>
+                                <td>{{currency saving.afterBalance}}</td>
+                                <td>{{saving.withdrawalDate}}</td>
+                                <td>{{saving.isActivity}}</td>
+                                <td>{{date saving.createdAt}}</td>
+                                <td>
+                                    <LinkTo @route="saving.withdraw-saving" @model={{saving.id}} class="text-gray-800">
+                                        <i class="fa fa-angle-double-down"></i></LinkTo>
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</Nav::SlideBar>
+
+<script>
+    $(document).ready(function () {
+        $('#dataTable').DataTable();
+    });
+</script>

@@ -27,4 +27,10 @@ Router.map(function() {
   });
   this.route('forgot-password');
   this.route('change-password');
+
+  this.route('saving', function() {
+    this.route('open-saving');
+    this.route('saving-listing');
+    this.route('withdraw-saving', { path: 'withdraw-saving/:withdrawSaving_id' });
+  });
 });
