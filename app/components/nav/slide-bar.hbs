@@ -41,7 +41,7 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 id="bank-number" class="collapse-header">01221468277</h6>
-                    <LinkTo @route="home" class="collapse-item">Chi tiết</LinkTo>
+                    <LinkTo @route="bank-account-info" class="collapse-item">Chi tiết</LinkTo>
                 </div>
             </div>
         </li>
@@ -128,9 +128,9 @@
             </a>
             <div id="collapseSavings" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <LinkTo @route="home" class="collapse-item">Mở tiết kiệm</LinkTo>
-                    <LinkTo @route="home" class="collapse-item">Rút tiết kiệm</LinkTo>
-                    <LinkTo @route="home" class="collapse-item">Tất toán</LinkTo>
+                    <LinkTo @route="saving.open-saving" class="collapse-item">Mở tiết kiệm</LinkTo>
+                    <LinkTo @route="saving.saving-listing" class="collapse-item">Rút tiết kiệm</LinkTo>
+                    <LinkTo @route="saving.saving-listing" class="collapse-item">Tất toán</LinkTo>
                 </div>
             </div>
         </li>
@@ -368,15 +368,15 @@
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                             aria-labelledby="userDropdown">
-                            <LinkTo @route="home" class="dropdown-item">
+                            <LinkTo @route="bank-account-info" class="dropdown-item">
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Thông tin cá nhân
                             </LinkTo>
-                            <LinkTo @route="home" class="dropdown-item">
+                            <LinkTo @route="bank-account-info" class="dropdown-item">
                                 <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Chi tiết tài khoản
                             </LinkTo>
-                            <LinkTo @route="home" class="dropdown-item">
+                            <LinkTo @route="bank-account-info" class="dropdown-item">
                                 <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Lịch sử giao dịch
                             </LinkTo>

@@ -33,4 +33,5 @@ Router.map(function() {
     this.route('saving-listing');
     this.route('withdraw-saving', { path: 'withdraw-saving/:withdrawSaving_id' });
   });
+  this.route('bank-account-info');
 });

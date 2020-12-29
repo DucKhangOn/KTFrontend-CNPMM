@@ -1,0 +1,35 @@
+<Nav::SlideBar>
+    <div class="container-fluid">
+        <h1 class="h3 mb-2 text-gray-800">Thông tin tài khoản</h1>
+
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class="text-dark">Số tài khoản</label>
+
+                    <Input name="BankCardNumber" type="text" class="form-control" @value={{@model.bankCardNumber}} readonly />
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="text-dark">Số dư</label>
+
+                    <Input name="Balance" type="text" class="form-control" @value={{currency @model.balance}} readonly />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class="text-dark">Chi nhánh</label>
+
+                    <Input name="Branch" type="text" class="form-control" @value={{@model.branch}} readonly />
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="text-dark">Ngày tạo</label>
+
+                    <Input name="CreatedAt" type="text" class="form-control" @value={{date @model.createdAt}} readonly />
+                </div>
+            </div>
+            <LinkTo @route="home" class="btn text-white theme-button mt-4 mb-4" data-blast="bgColor">
+                Quay lại</LinkTo>
+        </form>
+    </div>
+</Nav::SlideBar>
+<ChangeColor />
