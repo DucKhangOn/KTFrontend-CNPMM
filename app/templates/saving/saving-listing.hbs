@@ -15,8 +15,8 @@
                         <thead>
                             <tr>
                                 <th>Mã</th>
-                                <th>TKTK</th>
-                                <th>Kỳ hạn (tháng)</th>
+                                <th>Tài khoản</th>
+                                <th>Kỳ hạn</th>
                                 <th>Tiền ban đầu</th>
                                 <th>Tiền khi rút</th>
                                 <th>Ngày tất toán</th>
@@ -30,9 +30,9 @@
                             <tr>
                                 <td>{{saving.id}}</td>
                                 <td>{{saving.savingAccountNumber}}</td>
-                                <td>{{saving.term}}</td>
-                                <td>{{currency saving.prevBalance}}</td>
-                                <td>{{currency saving.afterBalance}}</td>
+                                <td>{{saving.term}} tháng</td>
+                                <td class="text-right">{{currency saving.prevBalance}}</td>
+                                <td class="text-right">{{currency saving.afterBalance}}</td>
                                 <td>{{saving.withdrawalDate}}</td>
                                 <td>{{saving.isActivity}}</td>
                                 <td>{{date saving.createdAt}}</td>
