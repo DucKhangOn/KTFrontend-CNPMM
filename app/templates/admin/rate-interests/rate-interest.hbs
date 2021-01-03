@@ -1,0 +1,67 @@
+<Admin::SlideBar>
+    <div class="container-fluid">
+        <h1 class="h3 mb-2 text-gray-800">Lãi suất tiết kiệm</h1>
+
+        <form>
+            {{#if @model.isNew}}
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class="text-dark">Kỳ hạn (Tháng)</label>
+
+                    <Input type="number" name="Name" class="form-control" @value={{@model.term}} />
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="text-dark">Lãi suất (%)</label>
+
+                    <Input type="number" name="RateInterest" class="form-control" @value={{@model.rateInterest}} />
+                </div>
+                 <div class="form-group col-md-6">
+                    <label class="text-dark">Ngày áp dụng</label>
+
+                    <Input type="number" name="Day" class="form-control" @value={{@model.day}} />
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="text-dark">Tháng áp dụng</label>
+
+                    <Input type="number" name="Month" class="form-control" @value={{@model.month}} />
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="text-dark">Năm áp dụng</label>
+
+                    <Input type="number" name="Year" class="form-control" @value={{@model.year}} />
+                </div>
+            </div>
+            <a role="button" class="btn btn-primary text-light" {{on 'click' this.submit}}>Xác nhận</a>
+            {{else}}
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class="text-dark">Kỳ hạn (Tháng)</label>
+
+                    <Input type="number" name="Name" class="form-control" @value={{@model.term}} readonly />
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="text-dark">Lãi suất (%)</label>
+
+                    <Input type="number" name="RateInterest" class="form-control" @value={{@model.rateInterest}} readonly />
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="text-dark">Ngày áp dụng</label>
+
+                    <Input type="number" name="Day" class="form-control" @value={{@model.day}} readonly />
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="text-dark">Tháng áp dụng</label>
+
+                    <Input type="number" name="Month" class="form-control" @value={{@model.month}} readonly />
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="text-dark">Năm áp dụng</label>
+
+                    <Input type="number" name="Year" class="form-control" @value={{@model.year}} readonly />
+                </div>
+            </div>
+            {{/if}}
+            <a role="button" class="btn btn-primary text-light" {{on 'click' this.cancel}}>Hủy</a>
+        </form>
+    </div>
+</Admin::SlideBar>

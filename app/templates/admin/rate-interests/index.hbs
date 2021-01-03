@@ -1,0 +1,58 @@
+<Admin::SlideBar>
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Lãi suất tiết kiệm</h1>
+        <div class="d-flex justify-content-end">
+            <a role="button" class="btn btn-primary text-light mb-2" {{on "click" this.addRateInterest}}>Thêm</a>
+        </div>
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Danh sách lãi xuất tiết kiệm</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" data-test="dkm">
+                        <thead>
+                            <tr>
+                                <th>Kỳ hạn</th>
+                                <th>Lãi suất</th>
+                                <th>Ngày</th>
+                                <th>Tháng</th>
+                                <th>Năm</th>
+                                <th>Parent</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each @model as |rate|}}
+                            <tr>
+                                <td>{{rate.term}} tháng</td>
+                                <td class="text-center">{{rate.rateInterest}}%</td>
+                                <td>{{rate.day}}</td>
+                                <td>{{rate.month}}</td>
+                                <td>{{rate.year}}</td>
+                                <td>{{rate.codeRate}}</td>
+                                <td>
+                                    <LinkTo @route="admin.rate-interests.rate-interest" @model={{rate.id}}
+                                        class="text-gray-800"><i class="far fa-file"></i></LinkTo>
+                                    <a class="text-gray-800" {{on "click" (fn this.delete rate)}}><i
+                                            class="fas fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</Admin::SlideBar>
+
+<script>
+    $(document).ready(function () {
+        $('#dataTable').DataTable();
+    });
+</script>

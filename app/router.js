@@ -24,6 +24,9 @@ Router.map(function() {
     this.route('users', function() {
       this.route('user', { path: '/:user_id' });
     });
+    this.route('rate-interests', function() {
+      this.route('rate-interest', { path: '/:rateInterest_id' });
+    });
   });
   this.route('forgot-password');
   this.route('change-password');
