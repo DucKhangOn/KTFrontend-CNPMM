@@ -37,4 +37,11 @@ Router.map(function() {
     this.route('withdraw-saving', { path: 'withdraw-saving/:withdrawSaving_id' });
   });
   this.route('bank-account-info');
+
+  this.route('info', function() {
+    this.route('bank-account-info');
+    this.route('exchange-rate');
+    this.route('rate-interest');
+    this.route('user-info');
+  });
 });
